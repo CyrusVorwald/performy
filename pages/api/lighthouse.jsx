@@ -3,6 +3,7 @@ const chromium = require('puppeteer');
 
 export async function getLighthouseReport({urlToAudit}) {
   try{
+    console.log(`getting lighthouse report for: ${urlToAudit}`)
     let urlToAuditFull
     try{
       urlToAuditFull = new URL(urlToAudit).toString()
@@ -39,8 +40,9 @@ export async function getLighthouseReport({urlToAudit}) {
       headless: true,
       ignoreHTTPSErrors: true,
     });
+    console.log(`chromium.executablePath:`)
     console.log(`chromium.executablePath: ${await chromium.executablePath()}`)
-    const options = {logLevel: 'info', output: 'html', port: (new URL(chrome.wsEndpoint())).port, chromePath: await chromium.executablePath()};
+    const options = {logLevel: 'info', output: 'html', port: (new URL(chrome.wsEndpoint())).port, chromePath: await chromium.executablePath};
     const runnerResult = await lighthouse(urlToAuditFull, options);
     await chrome.close();
 
