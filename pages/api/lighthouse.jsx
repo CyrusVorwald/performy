@@ -1,6 +1,7 @@
 const fs = require('fs');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
+const chromium = require('chromium')
 
 export async function getLighthouseReport({urlToAudit}) {
   let urlToAuditFull
