@@ -13,7 +13,6 @@ function Audit() {
 
     const handlerAuditUrl = async () => {
         setIsLoading(true)
-        console.log(`CHROME_PATH: ${process.env.CHROME_PATH}`)
         let result
 
         try{

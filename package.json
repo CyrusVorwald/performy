@@ -30,6 +30,7 @@
     "@heroicons/react": "^1.0.3",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
+    "puppeteer": "^10.1.0",
     "tailwindcss": "^2.2.4"
   }
 }
