@@ -39,7 +39,8 @@ export async function getLighthouseReport({urlToAudit}) {
       headless: true,
       ignoreHTTPSErrors: true,
     });
-    const options = {logLevel: 'info', output: 'html', port: (new URL(chrome.wsEndpoint())).port, chromePath: await chromium.executablePath};
+    console.log(`chromium.executablePath: ${await chromium.executablePath()}`)
+    const options = {logLevel: 'info', output: 'html', port: (new URL(chrome.wsEndpoint())).port, chromePath: await chromium.executablePath()};
     const runnerResult = await lighthouse(urlToAuditFull, options);
     await chrome.close();
 
@@ -57,6 +58,7 @@ export async function getLighthouseReport({urlToAudit}) {
 
     return res
   } catch (e) {
+    console.warn('getLighthouseReport failed!')
     return e
   }
 }
