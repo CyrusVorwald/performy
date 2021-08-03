@@ -1,7 +1,7 @@
 const fs = require('fs');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
-const chromium = require('chromium')
+const chromium = require('chrome-aws-lambda');
 
 export async function getLighthouseReport({urlToAudit}) {
   let urlToAuditFull
@@ -12,7 +12,7 @@ export async function getLighthouseReport({urlToAudit}) {
   }
 
   const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
-  const options = {logLevel: 'info', output: 'html', port: chrome.port};
+  const options = {logLevel: 'info', output: 'html', port: chrome.port, chromePath: await chromium.executablePath};
   const runnerResult = await lighthouse(urlToAuditFull, options);
 
   // `.report` is the HTML report as a string
