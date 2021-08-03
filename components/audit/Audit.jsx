@@ -19,6 +19,7 @@ function Audit() {
             const res = await fetch(`/api/lighthouse?urlToAudit=${urlToAudit}`)
             result = await res.json()
         } catch (e) {
+            console.log(`CHROME_PATH: ${process.env.CHROME_PATH}`)
             result = e
         }
 
