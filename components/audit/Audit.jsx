@@ -13,13 +13,13 @@ function Audit() {
 
     const handlerAuditUrl = async () => {
         setIsLoading(true)
+        console.log(`CHROME_PATH: ${process.env.CHROME_PATH}`)
         let result
 
         try{
             const res = await fetch(`/api/lighthouse?urlToAudit=${urlToAudit}`)
             result = await res.json()
         } catch (e) {
-            console.log(`CHROME_PATH: ${process.env.CHROME_PATH}`)
             result = e
         }
 
