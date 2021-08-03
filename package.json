@@ -6,11 +6,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.1",
+    "@headlessui/react": "^1.4.0",
+    "@magic-ext/icon": "^0.2.0",
+    "@material-ui/icons": "^4.11.2",
+    "chrome-launcher": "^0.14.0",
+    "d3": "^7.0.0",
+    "graphql": "^15.5.1",
+    "icon-sdk-js": "^1.1.0",
+    "lighthouse": "^8.1.0",
+    "magic-sdk": "^4.4.0",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "scss": "^0.2.4",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
+    "@heroicons/react": "^1.0.3",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
