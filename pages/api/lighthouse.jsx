@@ -1,3 +1,4 @@
+const fs = require('fs');
 const lighthouse = require('lighthouse');
 const chromium = require('puppeteer');
 
